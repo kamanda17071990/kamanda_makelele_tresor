@@ -1,7 +1,7 @@
 """
 URL configuration for gestionacad project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
 Examples:
 Function views
@@ -16,10 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from gestcotes import views  # Importer les vues depuis l'application gestcotes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-
-
+    path('api/etudiants/', views.etudiants_list_api, name='etudiants-list'),  # GET pour récupérer la liste
+    path('api/etudiants/create/', views.etudiants_create_api, name='etudiants-create'),  # POST pour créer un étudiant
+    path('api/cours/', views.cours_list_api, name='cours-list'),
+    path('api/cotes/', views.cote_list_api, name='cotes-list'),
+    path('etudiants/', views.etudiants_list, name='etudiants-list'),
 ]
+
+
+
+    
+   

@@ -19,7 +19,7 @@ class CoursAdmin(admin.ModelAdmin):
     list_display = ('code', 'intituler')
     search_fields = ('code', 'intituler')
     list_filter = ('intituler',)
-
+  
 admin.site.register(Cours, CoursAdmin)
 
 from django.contrib import admin
